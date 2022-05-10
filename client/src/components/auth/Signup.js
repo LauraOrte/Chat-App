@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react"
 import { Navigate } from "react-router-dom"
 import { UserContext } from "../../UserContext"
 import { API_BASE_URL } from "../../config"
+import styled from "styled-components";
 
 function Signup() {
   const { user, setUser } = useContext(UserContext)
@@ -44,55 +45,122 @@ function Signup() {
   }
 
   return (
-    <div className="row">
-      <h2>Sign up</h2>
-      <form className="signup-form" onSubmit={submitHandler}>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="name"
-              type="text"
-              className="validate"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <div className="name error red-text">{nameError}</div>
-            <label htmlFor="name">Name</label>
+    <>
+      <FormContainer>
+        <form onSubmit={submitHandler}>
+          <div className="brand">
+            <img src="" alt="Logo" />
+            <h2>CHAT REGISTRO</h2>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="email"
-              type="email"
-              className="validate"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <div className="email error red-text">{emailError}</div>
-            <label htmlFor="email">Email</label>
-          </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="password"
-              type="password"
-              className="validate"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="password error red-text">{passwordError}</div>
-            <label htmlFor="password">Password</label>
-          </div>
-        </div>
+          <input 
+          id="name"
+          type="text"
+          className="validate"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          />
+          <div className="name error red-text">{nameError}</div>
+          <label htmlFor="name">Name</label>
+          <input 
+          id="email"
+          type="email"
+          className="validate"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <button className="btn" style={{ width: "100%" }}>
+          <div className="email error red-text">{emailError}</div>
+            <label htmlFor="email">Email</label>
+          <input 
+          id="password"
+          type="password"
+          className="validate"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="password error red-text">{passwordError}</div>
+            <label htmlFor="password">Password</label>
+
+            <button className="btn" style={{ width: "100%" }}>
           Sign up
         </button>
-      </form>
-    </div>
+        </form>
+        
+      </FormContainer>
+      
+     
+    </>
+   
   )
 }
 
 export default Signup
+
+const FormContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #0B5394;
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    img {
+      height: 5rem;
+    }
+    h1 {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background-color: #00000076;
+    border-radius: 2rem;
+    padding: 2rem 4rem;
+  }
+  input {
+    background-color: transparent;
+    padding: 1rem;
+    border: 0.1rem solid #4e0eff;
+    border-radius: 0.4rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    &:focus {
+      border: 0.1rem solid #997af0;
+      outline: none;
+    }
+  }
+  button {
+    background-color: #F43C3C;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #4e0eff;
+    }
+  }
+  span {
+    color: white;
+    text-transform: uppercase;
+    a {
+      color: #4e0eff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+`;
+  
