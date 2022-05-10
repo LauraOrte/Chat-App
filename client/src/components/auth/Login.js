@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useContext } from "react"
 import { Navigate } from "react-router-dom"
+import styled from "styled-components";
 import { GoogleLoginButton } from "react-social-login-buttons"
 import { API_BASE_URL } from "../../config"
 import { UserContext } from "../../UserContext"
-import "./Login.css"
+
 
 function Login() {
   const { user, setUser } = useContext(UserContext)
@@ -60,39 +61,36 @@ function Login() {
   }
 
   return (
-    <div className="row">
-      <h2>Welcome</h2>
-
-      <form className="login-form" onSubmit={submitHandler}>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="email"
-              type="email"
-              className="validate"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="email">Email</label>
+    <>
+      <FormContainer>
+        <form action="" onSubmit={submitHandler}>
+          <div className="brand">
+            <img src={''} alt="logo" />
+            <h1>Chat live</h1>
           </div>
-        </div>
+          <input
+            id="email"
+            type="email"
+            className="validate"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              id="password"
-              type="password"
-              className="validate"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+              <label htmlFor="email">Email</label>
 
-            <div className="password error red-text">{loginError}</div>
+          <input
+           id="password"
+           type="password"
+           className="validate"
+           value={password}
+           onChange={(e) => setPassword(e.target.value)}
+          />
+  <div className="password error red-text">{loginError}</div>
             <label htmlFor="password">Password</label>
-          </div>
-        </div>
 
-        <button className="btn row" style={{ width: "100%" }}>
+
+
+            <button className="btn row" style={{ width: "100%" }}>
           Login
         </button>
         <div className="text-center pt-3">Or</div>
@@ -101,9 +99,79 @@ function Login() {
           className="mt-3 mb-3 "
           onClick={createGoogleAuthLink}
         />
-      </form>
-    </div>
-  )
+        </form>
+      </FormContainer>
+    
+    </>
+  );
 }
 
 export default Login
+
+const FormContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #0B5394;
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    img {
+      height: 5rem;
+    }
+    h1 {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background-color: #00000076;
+    border-radius: 2rem;
+    padding: 2rem 4rem;
+  }
+  input {
+    background-color: transparent;
+    padding: 1rem;
+    border: 0.1rem solid #4e0eff;
+    border-radius: 0.4rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    &:focus {
+      border: 0.1rem solid #997af0;
+      outline: none;
+    }
+  }
+  button {
+    background-color: #F43C3C;
+    color: white;
+    padding: 1.5rem 1rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #4e0eff;
+    }
+  }
+  span {
+    color: white;
+    text-transform: uppercase;
+    a {
+      color: #4e0eff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+`;

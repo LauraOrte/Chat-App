@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import "./App.css"
+
 import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import React, { useEffect, useState } from "react"
 import Navbar from "./components/layout/Navbar"
