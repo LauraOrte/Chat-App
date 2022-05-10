@@ -50,7 +50,7 @@ function Home() {
       <div className="row">
         <p>Go ahead and pick a chat room or create a new one!</p>
         <div className="col s12 m6">
-          <div className="card blue-grey darken-1">
+          <div className="card indigo lighten-1">
             <div className="card-content white-text">
               <span className="card-title">
                 Welcome {user ? user.name : ""}

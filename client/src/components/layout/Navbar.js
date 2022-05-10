@@ -4,6 +4,7 @@ import { UserContext } from "../../UserContext"
 import SignedOutMenu from "./SignedOutMenu"
 import SignedInMenu from "./SignedInMenu"
 import { API_BASE_URL } from "../../config"
+import "./Navbar.css";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext)
@@ -24,7 +25,7 @@ function Navbar() {
   const menu = user ? <SignedInMenu logout={logout} /> : <SignedOutMenu />
   return (
     <>
-      <nav className="green">
+      <nav className="green-text">
         <div className="nav-wrapper">
           <div className="brand-logo">
             <Link to="/">
