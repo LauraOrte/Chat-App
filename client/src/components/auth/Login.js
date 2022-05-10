@@ -66,7 +66,7 @@ function Login() {
         <form action="" onSubmit={submitHandler}>
           <div className="brand">
             <img src={''} alt="logo" />
-            <h1>Chat live</h1>
+            <h3>Chat live</h3>
           </div>
           <input
             id="email"
@@ -91,7 +91,7 @@ function Login() {
 
 
             <button className="btn row" style={{ width: "100%" }}>
-          Login
+          Entrar
         </button>
         <div className="text-center pt-3">Or</div>
         <GoogleLoginButton
@@ -109,7 +109,7 @@ function Login() {
 export default Login
 
 const FormContainer = styled.div`
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ const FormContainer = styled.div`
     img {
       height: 5rem;
     }
-    h1 {
+    h3 {
       color: white;
       text-transform: uppercase;
     }
@@ -139,7 +139,7 @@ const FormContainer = styled.div`
     padding: 2rem 4rem;
   }
   input {
-    background-color: transparent;
+    
     padding: 1rem;
     border: 0.1rem solid #4e0eff;
     border-radius: 0.4rem;
@@ -154,24 +154,7 @@ const FormContainer = styled.div`
   button {
     background-color: #F43C3C;
     color: white;
-    padding: 1.5rem 1rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 1rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #4e0eff;
-    }
+    
   }
-  span {
-    color: white;
-    text-transform: uppercase;
-    a {
-      color: #4e0eff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
+ 
 `;

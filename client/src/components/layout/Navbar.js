@@ -29,7 +29,7 @@ function Navbar() {
         <div className="nav-wrapper">
           <div className="brand-logo">
             <Link to="/">
-              <div>Chat Rooms</div>
+              <div> ·· Chat Rooms ··</div>
             </Link>
           </div>
           <a href="#" data-target="mobile-demo" className="sidenav-trigger">
