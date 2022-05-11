@@ -19,7 +19,7 @@ function Signup() {
     setEmailError("")
     setNameError("")
     setPasswordError("")
-    /* TODO borrar estos logs */
+    
     try {
       const res = await fetch(`${API_BASE_URL}/signup`, {
         method: "POST",

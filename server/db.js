@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { DB_URI } = require('./config');
 
-module.exports.startDb = () => {
+module.exports.Db = () => {
   const mongoDB = DB_URI;
-  mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('connected to mongoDB')).catch((err) => console.log(err));
+  mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('Conectado a mongoDB')).catch((err) => console.log(err));
 };

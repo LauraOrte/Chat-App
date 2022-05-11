@@ -6,7 +6,7 @@ import { UserContext } from "../../UserContext"
 import RoomList from "./RoomList"
 import { API_BASE_URL } from "../../config"
 
-let socket // TODO poner esta variable adentro del useEffect
+let socket 
 
 function Home() {
   const { user, setUser } = useContext(UserContext)

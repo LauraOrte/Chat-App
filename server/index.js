@@ -5,7 +5,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const authRoutes = require('./routes/auth-routes');
 const googleAuthRoutes = require('./routes/google-auth-routes');
-const { startDb } = require('./db');
+const { Db } = require('./db');
 const { CORS_URL } = require('./config');
 
 const app = express();
@@ -28,7 +28,7 @@ app.use(authRoutes);
 app.use(googleAuthRoutes);
 
 // DB initialization
-startDb();
+Db();
 
 // Socket-io
 const io = new Server(httpServer, {
@@ -41,5 +41,5 @@ require('./socket-io')(io);
 
 const PORT = process.env.PORT || 5000;
 httpServer.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+  console.log(`Servidor inicializado en el servidor ${PORT}`);
 });

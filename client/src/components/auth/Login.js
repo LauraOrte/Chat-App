@@ -46,7 +46,7 @@ function Login() {
 
   const createGoogleAuthLink = async () => {
     try {
-      // cambiar la url de  "http://localhost:5000/auth/google/url" a "http://localhost:8080/createAuthLink"
+      
 
       const response = await fetch(`${API_BASE_URL}/auth/google/url`)
       const fetchedURL = await response.json()

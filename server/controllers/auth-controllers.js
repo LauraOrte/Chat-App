@@ -21,7 +21,7 @@ const alertError = (err) => {
       errors[properties.path] = properties.message;
     });
   }
-  // TODO falta sanitizar, en este momento se pueden ingresar espacios al final y nada lo controla
+  
   return errors;
 };
 

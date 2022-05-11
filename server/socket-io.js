@@ -12,8 +12,8 @@ module.exports = (io) => {
 
     socket.on('create-room', (name) => {
       const room = new Room({ name });
-      // Fijate que si pones socket.emit('room-created', solamente se
-      // se actualiza para el usuario que lo crea, el io.emit, lo emite a todos
+
+      
       room.save().then((result) => { io.emit('room-created', result); });
     });
 
@@ -38,13 +38,15 @@ module.exports = (io) => {
         text: message,
       };
 
-      console.log('el backend recibio este mensaje: ', message);
+      //mostrar en el back el mensaje que ha recibido (opcional)
+      // console.log('el backend ha recibido este mensaje: ', message);
 
       const msg = new Message(messageToStore);
 
       msg.save();
 
       io.to(room_id).emit('newMessage', msg);
+
       // Llama al setMessage en el front, para que se limpie el espacio de escribir el mensaje
       setMessageCallback();
     });

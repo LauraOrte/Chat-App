@@ -4,7 +4,6 @@ import { UserContext } from "../../UserContext"
 import SignedOutMenu from "./SignedOutMenu"
 import SignedInMenu from "./SignedInMenu"
 import { API_BASE_URL } from "../../config"
-import "./Navbar.css";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext)
