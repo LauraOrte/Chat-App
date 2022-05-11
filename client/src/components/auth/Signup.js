@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom"
 import { UserContext } from "../../UserContext"
 import { API_BASE_URL } from "../../config"
 import styled from "styled-components";
+import Logo from "../../assets/logo-surf.png";
 
 function Signup() {
   const { user, setUser } = useContext(UserContext)
@@ -49,8 +50,8 @@ function Signup() {
       <FormContainer>
         <form onSubmit={submitHandler}>
           <div className="brand">
-            <img src="" alt="Logo" />
-            <h2>CHAT REGISTRO</h2>
+            <img src={Logo} alt="Logo" />
+            <h3>CHAT REGISTRO</h3>
           </div>
           <input 
           id="name"
@@ -97,7 +98,7 @@ function Signup() {
 export default Signup
 
 const FormContainer = styled.div`
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -113,7 +114,7 @@ const FormContainer = styled.div`
     img {
       height: 5rem;
     }
-    h1 {
+    h3 {
       color: white;
       text-transform: uppercase;
     }
@@ -127,7 +128,7 @@ const FormContainer = styled.div`
     padding: 2rem 4rem;
   }
   input {
-    background-color: transparent;
+    
     padding: 1rem;
     border: 0.1rem solid #4e0eff;
     border-radius: 0.4rem;
@@ -142,25 +143,7 @@ const FormContainer = styled.div`
   button {
     background-color: #F43C3C;
     color: white;
-    padding: 1rem 2rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #4e0eff;
-    }
+    
   }
-  span {
-    color: white;
-    text-transform: uppercase;
-    a {
-      color: #4e0eff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
+ 
 `;
-  

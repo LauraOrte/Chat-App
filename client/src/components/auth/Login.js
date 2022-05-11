@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { GoogleLoginButton } from "react-social-login-buttons"
 import { API_BASE_URL } from "../../config"
 import { UserContext } from "../../UserContext"
+import Logo from "../../assets/logo-surf.png";
 
 
 function Login() {
@@ -65,7 +66,7 @@ function Login() {
       <FormContainer>
         <form action="" onSubmit={submitHandler}>
           <div className="brand">
-            <img src={''} alt="logo" />
+            <img src={Logo} alt="logo" />
             <h3>Chat live</h3>
           </div>
           <input
