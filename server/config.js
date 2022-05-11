@@ -3,12 +3,12 @@ require('dotenv').config();
 const { GOOGLE_CLIENT_ID } = process.env;
 const { GOOGLE_CLIENT_SECRET } = process.env;
 const { SERVER_ROOT_URI } = process.env;
-const { CLIENT_REDIRECT_TO_URI } = process.env || 'http://localhost:3000';
+const { CLIENT_REDIRECT_TO_URI } = process.env || 'http://localhost:8000';
 const JWT_SECRET = 'chatroom secret';
 const { DB_URI } = process.env;
 const COOKIE_NAME = 'jwt';
 const REDIRECT_URL = 'login/google-auth';
-const CORS_URL = process.env || 'http://localhost:3000';
+const CORS_URL = process.env || 'http://localhost:8000';
 
 module.exports = {
   GOOGLE_CLIENT_ID,
