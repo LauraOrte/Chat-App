@@ -1,5 +1,6 @@
 import React from "react"
 import "./SingleMessage.css"
+import { horaMes } from '../../helpers/horaMes'
 
 function SingleMessage({ message: { name, user_id, text }, current_uid }) {
   let isCurrentUser = false
@@ -12,9 +13,13 @@ function SingleMessage({ message: { name, user_id, text }, current_uid }) {
         <p className="sentbyme">
           {" "}
           {name}: {text}
-        </p>
+        </p> 
+        <span className="time_date"> { horaMes(text.createdAt)} </span>
       </div>
+      
     </div>
+    
+
   ) : (
     <div className="row left-align">
       <div className="col s12 m8 16 left">
