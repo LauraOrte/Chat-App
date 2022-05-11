@@ -1,7 +1,7 @@
 import React from "react"
 import STB from "react-scroll-to-bottom"
 import SingleMessage from "./SingleMessage"
-import { horaMes } from '../../helpers/horaMes'
+
 import "./Messages.css"
 
 function Messages({ messageLog, user_id }) {

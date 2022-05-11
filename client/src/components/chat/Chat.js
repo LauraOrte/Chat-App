@@ -49,7 +49,7 @@ function Chat() {
   }
 
   return (
-    <div className="outerContainer">
+    <div className="outerContainer light-blue lighten-5">
       <div
         className="container"
         style={{ backgroundImage: `url(${background})` }}

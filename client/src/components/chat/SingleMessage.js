@@ -27,6 +27,7 @@ function SingleMessage({ message: { name, user_id, text }, current_uid }) {
           {" "}
           {name}: {text}
         </p>
+        <span className="time_date"> { horaMes(text.createdAt)} </span>
       </div>
     </div>
   )

@@ -48,12 +48,12 @@ function Home() {
   return (
     <div>
       <div className="row">
-        <p>Go ahead and pick a chat room or create a new one!</p>
+        <p>¡Anímate a elegir una sala de chat o crea una nueva!</p>
         <div className="col s12 m6">
           <div className="card indigo lighten-1">
             <div className="card-content white-text">
               <span className="card-title">
-                Welcome {user ? user.name : ""}
+                Bienvenidx {user ? user.name : ""}
               </span>
               <form onSubmit={handleSubmit}>
                 <div className="row">
@@ -66,10 +66,10 @@ function Home() {
                       value={room}
                       onChange={(e) => setRoom(e.target.value)}
                     />
-                    <label htmlFor="room">Enter a room name</label>
+                    <label htmlFor="room">Introduzca el nombre de una sala</label>
                   </div>
                 </div>
-                <button className="btn">Create Room</button>
+                <button className="btn">Crear sala</button>
               </form>
             </div>
           </div>
