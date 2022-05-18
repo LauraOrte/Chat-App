@@ -3,6 +3,7 @@ const { JWT_SECRET, COOKIE_NAME } = require('../config');
 
 const maxAge = 24 * 60 * 60;
 
+//para poder tener info entre cliente y servidor de forma segura
 const createJWT = (id) => jwt.sign({ id }, JWT_SECRET, {
   expiresIn: maxAge, // in token expiration, calculate by second
 });

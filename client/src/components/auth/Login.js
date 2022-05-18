@@ -16,6 +16,7 @@ function Login() {
   const [nameError, setNameError] = useState("")
   const [loginError, setLoginError] = useState("")
 
+  // cuando la validación haya tenido éxito
   const submitHandler = async (e) => {
     e.preventDefault()
     setNameError("")

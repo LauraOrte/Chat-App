@@ -20,6 +20,8 @@ const userSchema = new mongoose.Schema({
     minlength: [6, 'The password should be at least 6 characters long'],
   },
 });
+
+//antes de guardar hace todo esto SIEMPRE ENCRIPTAR LA CONTRASEÑA ANTES DE GUARDAR
 userSchema.pre('save', async function (next) {
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(this.password, salt);
